@@ -19,6 +19,7 @@ const sequelize = new Sequelize(
         ssl: {
           require: true,
           rejectUnauthorized: true,
+          ca: process.env.DB_SSL_CA,
         },
       },
     }),
