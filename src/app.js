@@ -9,6 +9,7 @@ const app = express();
 app.set("trust proxy", 1);
 const servicesRoutes = require("./routes/servicesRoutes");
 const appointmentsRoutes = require("./routes/appointmentsRoutes");
+const activitiesRoutes = require("./routes/activitiesRoutes");
 
 app.use(express.json());
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/services", servicesRoutes);
 app.use("/api/appointments", appointmentsRoutes);
+app.use("/api/activities", activitiesRoutes);
 app.use(errorHandler);
 
 module.exports = app;
