@@ -60,6 +60,15 @@ const Appointment = sequelize.define(
       allowNull: false,
       defaultValue: "pending",
     },
+    depositPaid: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    comments: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     tableName: "appointments",
