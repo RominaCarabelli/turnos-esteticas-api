@@ -105,6 +105,8 @@ async function createAppointment(userId, appointmentData) {
     serviceName,
     startAt,
     durationMinutes,
+    depositPaid = false,
+    comments = null,
   } = appointmentData;
 
   const service = await validateService(
@@ -130,6 +132,8 @@ async function createAppointment(userId, appointmentData) {
     serviceName: resolvedServiceName,
     startAt: new Date(startAt),
     durationMinutes,
+    depositPaid,
+    comments: comments?.trim() || null,
   });
 }
 
@@ -159,6 +163,8 @@ async function updateAppointment(
     startAt,
     durationMinutes,
     status,
+    depositPaid = false,
+    comments = null,
   } = appointmentData;
 
   const service = await validateService(
@@ -190,6 +196,8 @@ async function updateAppointment(
     startAt: new Date(startAt),
     durationMinutes,
     status,
+    depositPaid,
+    comments: comments?.trim() || null,
   });
 
   return appointment;

@@ -91,6 +91,21 @@ const validateAppointment = [
     .isInt({ min: 1, max: 1440 })
     .withMessage("La duración debe ser un entero entre 1 y 1440 minutos.")
     .toInt(),
+
+  body("depositPaid")
+    .optional()
+    .isBoolean()
+    .withMessage("La seña debe indicar si está pagada o no.")
+    .toBoolean(),
+
+  body("comments")
+    .optional({ values: "null" })
+    .isString()
+    .withMessage("Los comentarios deben ser un texto.")
+    .bail()
+    .trim()
+    .isLength({ max: 2000 })
+    .withMessage("Los comentarios no pueden superar los 2000 caracteres."),
 ];
 
 const validateAppointmentUpdate = [
