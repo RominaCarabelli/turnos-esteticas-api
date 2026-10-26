@@ -180,7 +180,7 @@ La autenticación utiliza sesiones administradas mediante `express-session`, con
 
 - Las contraseñas se almacenan mediante hash con bcrypt.
 - Las sesiones tienen una duración máxima configurada de 24 horas.
-- Las cookies de sesión utilizan `HttpOnly` y `SameSite=Lax`.
+- Las cookies de sesión utilizan `HttpOnly` y `SameSite=none`.
 - En producción, la cookie se configura como segura mediante HTTPS.
 - Las rutas privadas verifican que exista una sesión válida.
 
@@ -318,4 +318,16 @@ El archivo `.env` no debe publicarse en el repositorio, ya que contiene credenci
 
 ## Despliegue
 
-Las instrucciones y la URL pública de la API se incorporarán una vez completada la configuración de producción y verificado el funcionamiento del servicio desplegado.
+La API está desplegada en Render y utiliza una base de datos MySQL alojada en Aiven.
+
+- **URL de la API:** https://turnos-esteticas-api.onrender.com
+- **Base de datos:** MySQL en Aiven.
+- **Frontend:** https://rominacarabelli.github.io/turnos-esteticas-frontend/
+
+Para ejecutar la API en producción, Render utiliza las variables de entorno configuradas en el servicio. Las credenciales de conexión y la clave secreta de las sesiones se mantienen fuera del repositorio.
+
+La ruta raíz (`/`) permite comprobar que la API está funcionando. Los endpoints de autenticación, servicios y turnos están disponibles bajo el prefijo `/api`.
+
+## Colección de Postman
+
+En la carpeta `postman/` se encuentra la colección exportada de Postman, que permite importar y ejecutar las solicitudes utilizadas para probar los endpoints de la API.
