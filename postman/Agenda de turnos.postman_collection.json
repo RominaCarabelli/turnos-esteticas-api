@@ -1,0 +1,468 @@
+{
+  "info": {
+    "_postman_id": "147202ac-6643-4eaf-98a1-dc4e0a0ab341",
+    "name": "Collection Agenda de turnos",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57108008",
+    "_collection_link": "https://go.postman.co/collection/57108008-147202ac-6643-4eaf-98a1-dc4e0a0ab341?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Autenticación",
+      "item": [
+        {
+          "name": "Registrar profesional",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Profesional de prueba\",\n  \"email\": \"profesional.nuevo@example.com\",\n  \"password\": \"Prueba1234\",\n  \"confirmPassword\": \"Prueba1234\",\n  \"workMode\": \"salon\",\n  \"salonName\": \"Romina\",\n  \"activityIds\": [7],\n  \"customActivity\": \"Masajes\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/auth/register",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"profesional.prueba@ejemplo.com\",\n  \"password\": \"Prueba1234\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/auth/logout",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consultar perfil",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/auth/me",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Servicios",
+      "item": [
+        {
+          "name": "Listar servicios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/services",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consultar servicio por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/services/4",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "services",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Servicio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Lifting de pestañas\",\n  \"description\": \"Servicio de lifting de pestañas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/services",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Editar servicio",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Servicio ajeno modificado\",\n  \"description\": \"Prueba de seguridad\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/services/1",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "services",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Desactivar servicio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/services/1",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "services",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Turnos",
+      "item": [
+        {
+          "name": "Listar turnos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/appointments",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consultar turno por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/appointments/7",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "appointments",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear turno",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientName\": \"Cliente de prueba\",\n  \"clientPhone\": \"1123456789\",\n  \"serviceId\": null,\n  \"serviceName\": \"Lifting de pestañas\",\n  \"startAt\": \"2026-10-28T09:00:00-03:00\",\n  \"durationMinutes\": 60\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/appointments",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar turno",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientName\": \"Cliente de prueba\",\n  \"clientPhone\": \"1123456789\",\n  \"serviceId\": null,\n  \"serviceName\": \"Lifting de pestañas\",\n  \"startAt\": \"2026-10-28T09:00:00-03:00\",\n  \"durationMinutes\": 60,\n  \"status\": \"confirmed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/appointments/7",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "appointments",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancelar turno",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/appointments/7",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "appointments",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Actividades",
+      "item": [
+        {
+          "name": "Listar actividades - registro",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://turnos-esteticas-api.onrender.com/api/activities",
+              "protocol": "https",
+              "host": [
+                "turnos-esteticas-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0td7",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_02sy",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_10ap",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_10ap",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0td7",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_10ap",
+      "secret": true
+    },
+    {
+      "key": "baseURL",
+      "secret": true
+    }
+  ]
+}
